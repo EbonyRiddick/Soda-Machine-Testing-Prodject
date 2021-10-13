@@ -93,6 +93,38 @@ class TestRegisterHasCoin(unittest.TestCase):
         self.assertTrue(self.soda_machine.register_has_coin)
     
 
+class DetermineChangeValue(unittest.TestCase):
+    """Testing method used to determine change value"""
+
+    def setUp(self):
+        self.soda_machine= SodaMachine()
+
+    def test_determine_change_value_total_payment_higher(self):
+        """Testing with total payment higher"""
+        change = self.soda_machine.determine_change_value(2,.65)
+        self.assertEqual(change,1.35)
+
+    def test_determine_change_value_soda_price_higher(self):
+        """Testing with soda price higher"""
+        change = self.soda_machine.determine_change_value(.60,.75)
+        self.assertEqual(change, -.15)
+
+    def test_determine_change_value_equal(self):
+        """Testing with equal values"""
+        change = self.soda_machine.determine_change_value(.60,.60)
+        self.assertEqual(change,0)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
