@@ -34,7 +34,12 @@ class TestGetWalletCoin(unittest.TestCase):
         returned_coin = self.customer.get_wallet_coin('Ponny')
         self.assertEqual(returned_coin, None)
 
+class TestAddCoinsToWallet(unittest.TestCase):
 
+    def setUp(self):
+        self.customer = Customer()
+
+        
     def test_add_coins_to_wallet_increase_value(self):
         """Test for customers add coins to wallet method to see if it increases list value"""
         
