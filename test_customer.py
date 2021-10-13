@@ -27,6 +27,12 @@ class TestGetWalletCoin(unittest.TestCase):
         returned_coin = self.customer.get_wallet_coin('Penny')
         self.assertEqual(returned_coin.value, .01)
         
+    def test_can_not_return_string(self):
+        """Pass in 'Ponny', method should return a none value"""
+        returned_coin = self.customer.get_wallet_coin('Ponny')
+        self.assertEqual(returned_coin, None)
+        
+    
 
     
 
