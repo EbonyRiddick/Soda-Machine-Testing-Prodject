@@ -1,10 +1,10 @@
 import unittest
 from customer import Customer
 
-class TestGetWalletCoin(unittest.Testcase):
+class TestGetWalletCoin(unittest.TestCase):
     """Tests for customer's get_wallet_coin method"""
 
-    def setup(self):
+    def setUp(self):
         self.customer = Customer()
 
     def test_can_return_quarter(self):
@@ -26,7 +26,7 @@ class TestGetWalletCoin(unittest.Testcase):
         """Pass in 'Penny', method should return a Penny instance"""
         returned_coin = self.customer.get_wallet_coin('Penny')
         self.assertEqual(returned_coin.value, .01)
-
+        
 
     
 
