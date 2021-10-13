@@ -127,5 +127,50 @@ class DetermineChangeValue(unittest.TestCase):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class TestCalculateCoinValue(unittest.TestCase):
+    def setUp(self):
+        self.soda_machine= SodaMachine()
+
+    def test_calculate_coin_value(self):
+        """"Test Calculate coin value method for proper calculations"""
+        coin_list=[Quarter(), Nickel(), Dime(), Penny()]
+
+        total= self.soda_machine.calculate_coin_value(coin_list)
+
+        self.assertEqual(total, 0.41)
+
+    def test_calculate_coin_value(self):
+        """""Test calculate coin value method to get zero if empty string is inserted"""
+        coin_list=[]
+
+        total= self.soda_machine.calculate_coin_value(coin_list)
+
+        self.assertEqual(total, 0)
+
+        
+
+
 if __name__ == '__main__':
     unittest.main()    
