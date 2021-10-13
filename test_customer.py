@@ -1,5 +1,6 @@
 import unittest
 from customer import Customer
+from coins import Quarter, Dime, Nickel, Penny
 
 coin_list= ["Penny", 'Nickel', 'Quarter']
 
@@ -42,10 +43,11 @@ class TestAddCoinsToWallet(unittest.TestCase):
     def test_add_coins_to_wallet_increase_value(self):
         """Test for customers add coins to wallet method to see if it increases list value"""
         
-        coins_list= ["Penny", 'Nickel', 'Quarter']
+        coins_list= [Penny(), 'Nickel', 'Quarter']
 
-        for coin in coins_list:
-            self.customer.wallet.money.append(coin)
+        # for coin in coins_list:
+        #     self.customer.wallet.money.append(coin)
+        self.customer.add_coins_to_wallet(coins_list)
         self.assertEqual(len(self.customer.wallet.money), 91)    
     
     
@@ -66,17 +68,17 @@ class TestAddCanToBackpack(unittest.TestCase):
     
     def test_add_can_to_backpack_cola(self):
         """Pass in a'Cola', method should return a  purchased_cans instance"""
-        self.customer.backpack.purchased_cans.append('Cola')
+        self.customer.add_can_to_backpack('Cola')
         self.assertEqual(len(self.customer.backpack.purchased_cans), 1)            
     
     def test_add_can_to_backpack_orangesoda(self):
         """Pass in a'OrangeSoda', method should return a  purchased_cans instance"""
-        self.customer.backpack.purchased_cans.append('OrangeSoda')
+        self.customer.add_can_to_backpack('OrangeSoda')
         self.assertEqual(len(self.customer.backpack.purchased_cans), 1)
       
     def test_add_can_to_backpack_rootbeer(self):
         """Pass in a'RootBeer', method should return a  purchased_cans instance"""
-        self.customer.backpack.purchased_cans.append('RootBeer')
+        self.customer.add_can_to_backpack('RootBeer')
         self.assertEqual(len(self.customer.backpack.purchased_cans), 1)
     
 
