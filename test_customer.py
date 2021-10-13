@@ -32,8 +32,20 @@ class TestGetWalletCoin(unittest.TestCase):
         returned_coin = self.customer.get_wallet_coin('Ponny')
         self.assertEqual(returned_coin, None)
         
-    
+    def test_add_can_to_backpack_cola(self):
+        """Pass in a'Cola', method should return a  purchased_cans instance"""
+        self.customer.backpack.purchased_cans.append('Cola')
+        self.assertEqual(len(self.customer.backpack.purchased_cans), 1)
 
+    def test_add_can_to_backpack_orangesoda(self):
+        """Pass in a'OrangeSoda', method should return a  purchased_cans instance"""
+        self.customer.backpack.purchased_cans.append('OrangeSoda')
+        self.assertEqual(len(self.customer.backpack.purchased_cans), 1)
+      
+    def test_add_can_to_backpack_rootbeer(self):
+        """Pass in a'RootBeer', method should return a  purchased_cans instance"""
+        self.customer.backpack.purchased_cans.append('RootBeer')
+        self.assertEqual(len(self.customer.backpack.purchased_cans), 1)
     
 
 if __name__ == '__main__':
