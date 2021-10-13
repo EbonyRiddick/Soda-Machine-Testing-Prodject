@@ -1,6 +1,8 @@
 import unittest
 from customer import Customer
 
+coin_list= ["Penny", 'Nickel', 'Quarter']
+
 class TestGetWalletCoin(unittest.TestCase):
     """Tests for customer's get_wallet_coin method"""
 
@@ -31,12 +33,42 @@ class TestGetWalletCoin(unittest.TestCase):
         """Pass in 'Ponny', method should return a none value"""
         returned_coin = self.customer.get_wallet_coin('Ponny')
         self.assertEqual(returned_coin, None)
+
+class TestAddCoinsToWallet(unittest.TestCase):
+
+    def setUp(self):
+        self.customer = Customer()
+
+    def test_add_coins_to_wallet_increase_value(self):
+        """Test for customers add coins to wallet method to see if it increases list value"""
         
+        coins_list= ["Penny", 'Nickel', 'Quarter']
+
+        for coin in coins_list:
+            self.customer.wallet.money.append(coin)
+        self.assertEqual(len(self.customer.wallet.money), 91)    
+    
+    
+    def test_add_coins_to_wallet_value_stays_same(self):
+        """Test for customers add coins to wallet method to see if empty list doens't change the value"""
+
+        coins_list= []  
+
+        for coin in coins_list:
+         self.customer.wallet.money.append(coin)
+         self.assertEqual(len(self.customer.wallet.money), 89)    
+
+    
+class TestAddCanToBackpack(unittest.TestCase):    
+
+    def setUp(self):
+        self.customer = Customer()
+    
     def test_add_can_to_backpack_cola(self):
         """Pass in a'Cola', method should return a  purchased_cans instance"""
         self.customer.backpack.purchased_cans.append('Cola')
-        self.assertEqual(len(self.customer.backpack.purchased_cans), 1)
-
+        self.assertEqual(len(self.customer.backpack.purchased_cans), 1)            
+    
     def test_add_can_to_backpack_orangesoda(self):
         """Pass in a'OrangeSoda', method should return a  purchased_cans instance"""
         self.customer.backpack.purchased_cans.append('OrangeSoda')
@@ -48,5 +80,5 @@ class TestGetWalletCoin(unittest.TestCase):
         self.assertEqual(len(self.customer.backpack.purchased_cans), 1)
     
 
-if __name__ == '__main__':
+if __name__ == '__main__': 
     unittest.main()
