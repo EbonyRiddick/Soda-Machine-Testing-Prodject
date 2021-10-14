@@ -144,10 +144,24 @@ class TestGetInventorySoda(unittest.TestCase):
     def setUp(self):
         self.soda_machine= SodaMachine()
 
-    def test_get_inventory_soda(self):
+    def test_get_inventory_soda_cola(self):
         soda= Cola()
         self.soda_machine.get_inventory_soda(soda)
         self.assertEqual(soda.name, 'Cola')
+
+    def test_get_inventory_soda_orange_soda(self):
+        soda= OrangeSoda()
+        self.soda_machine.get_inventory_soda(soda)
+        self.assertEqual(soda.name, 'Orange Soda')
+
+    def test_get_inventory_soda_root_beer(self):
+        soda= RootBeer()
+        self.soda_machine.get_inventory_soda(soda)
+        self.assertEqual(soda.name, 'Root Beer')    
+
+    def test_get_inventory_soda_root_beer(self):
+        soda= self.soda_machine.get_inventory_soda('Mountian Dew')
+        self.assertIsNone(soda)  
 
         
 
