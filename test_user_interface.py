@@ -48,18 +48,20 @@ class TestTryParseInt(unittest.TestCase):
         self.assertEqual(user_input, 0)
 
 
+class TestGetUniqueCanName(unittest.TestCase):
+    """Testing return of can names"""
 
+    def test_get_unique_can_name(self):
+        cans_list = [Cola(), Cola(), RootBeer(), RootBeer(), OrangeSoda(), OrangeSoda()]
+        self.user_interface = user_interface
+        unique_name = self.user_interface.get_unique_can_names(cans_list)
+        self.assertEqual(len(unique_name), 3)
 
-
-
-
-
-
-
-
-
-
-
+    def test_get_unique_can_name_empty_list(self):
+        cans_list = []
+        self.user_interface = user_interface
+        unique_name = self.user_interface.get_unique_can_names(cans_list)
+        self.assertEqual(len(unique_name), 0)
 
 
 class TestDisplayPaymentValue(unittest.TestCase):
