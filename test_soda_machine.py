@@ -169,28 +169,6 @@ class TestGetInventorySoda(unittest.TestCase):
         self.assertIsNone(soda)  
 
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class TestReturnInventory(unittest.TestCase):
     """Testing return inventory method to make sure after attempted purchase fails can is added back to inventory"""
 
@@ -201,6 +179,28 @@ class TestReturnInventory(unittest.TestCase):
         can = RootBeer()
         self.soda_machine.return_inventory(can)
         self.assertEqual(len(self.soda_machine.inventory), 31)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
