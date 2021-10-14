@@ -1,6 +1,7 @@
 import unittest
 from soda_machine import SodaMachine
 from coins import Quarter, Dime, Nickel, Penny
+from cans import Cola, OrangeSoda, RootBeer
 
 class TestFillRegister(unittest.TestCase):
     """"Test method for filling register list"""
@@ -139,7 +140,16 @@ class TestCalculateCoinValue(unittest.TestCase):
         self.assertEqual(total, 0)
 
 
+class TestGetInventorySoda(unittest.TestCase):
+    def setUp(self):
+        self.soda_machine= SodaMachine()
 
+    def test_get_inventory_soda(self):
+        soda= Cola()
+        self.soda_machine.get_inventory_soda(soda)
+        self.assertEqual(soda.name, 'Cola')
+
+        
 
 
 
