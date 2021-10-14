@@ -118,41 +118,6 @@ class DetermineChangeValue(unittest.TestCase):
         change = self.soda_machine.determine_change_value(.60,.60)
         self.assertEqual(change,0)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class TestCalculateCoinValue(unittest.TestCase):
     def setUp(self):
         self.soda_machine= SodaMachine()
@@ -172,6 +137,41 @@ class TestCalculateCoinValue(unittest.TestCase):
         total= self.soda_machine.calculate_coin_value(coin_list)
 
         self.assertEqual(total, 0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         
 
