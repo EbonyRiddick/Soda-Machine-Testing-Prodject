@@ -141,25 +141,30 @@ class TestCalculateCoinValue(unittest.TestCase):
 
 
 class TestGetInventorySoda(unittest.TestCase):
+    """"Test method for insuring that soda can that is called gets returned"""
     def setUp(self):
         self.soda_machine= SodaMachine()
 
     def test_get_inventory_soda_cola(self):
+        """"Test method that returneds cola"""
         soda= Cola()
         self.soda_machine.get_inventory_soda(soda)
         self.assertEqual(soda.name, 'Cola')
 
     def test_get_inventory_soda_orange_soda(self):
+        """"Test method that returneds Orange Soda"""
         soda= OrangeSoda()
         self.soda_machine.get_inventory_soda(soda)
         self.assertEqual(soda.name, 'Orange Soda')
 
     def test_get_inventory_soda_root_beer(self):
+        """"Test method that returneds Root Beer"""
         soda= RootBeer()
         self.soda_machine.get_inventory_soda(soda)
         self.assertEqual(soda.name, 'Root Beer')    
 
     def test_get_inventory_soda_root_beer(self):
+        """"Test method that returneds a none value"""
         soda= self.soda_machine.get_inventory_soda('Mountian Dew')
         self.assertIsNone(soda)  
 
