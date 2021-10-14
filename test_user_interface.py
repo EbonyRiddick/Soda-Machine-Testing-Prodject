@@ -31,5 +31,19 @@ class TestUserInterface(unittest.TestCase):
         self.assertEqual(user_input, (False, None))
 
 
+class TestTryParseInt(unittest.TestCase):
+    """Test method for try Parse Int"""
+
+    def test_try_parse_int(self):
+        self.user_interface = user_interface
+        user_input= self.user_interface.try_parse_int('10')
+        self.assertEqual(user_input, 10)
+
+
+
+
+
+
+
 if __name__ == '__main__':
     unittest.main()
