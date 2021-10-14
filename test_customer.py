@@ -12,28 +12,32 @@ class TestGetWalletCoin(unittest.TestCase):
 
     def test_can_return_quarter(self):
         """Pass in 'Quarter', method should return a Quarter instance"""
-        returned_coin = self.customer.get_wallet_coin(Quarter())
+        returned_coin = Quarter()
+        self.customer.get_wallet_coin(returned_coin)
         self.assertEqual(returned_coin.value, .25)
         
     def test_can_return_dime(self):
         """Pass in 'Dime', method should return a Dime instance"""
-        returned_coin = self.customer.get_wallet_coin(Dime())
+        returned_coin = Dime()
+        self.customer.get_wallet_coin(returned_coin)
         self.assertEqual(returned_coin.value, .10)
 
     def test_can_return_nickel(self):
         """Pass in 'Nickel', method should return a Nickel instance"""
-        returned_coin = self.customer.get_wallet_coin(Nickel())
+        returned_coin= Nickel()
+        self.customer.get_wallet_coin(returned_coin)
         self.assertEqual(returned_coin.value, .05)
 
     def test_can_return_penny(self):
         """Pass in 'Penny', method should return a Penny instance"""
-        returned_coin = self.customer.get_wallet_coin(Penny())
+        returned_coin= Penny()
+        self.customer.get_wallet_coin(returned_coin)
         self.assertEqual(returned_coin.value, .01)
         
     def test_can_not_return_string(self):
         """Pass in 'Ponny', method should return a none value"""
         returned_coin = self.customer.get_wallet_coin('Ponny')
-        self.assertEqual(returned_coin, None)
+        self.assertIsNone(returned_coin)
 
 class TestAddCoinsToWallet(unittest.TestCase):
 
@@ -48,7 +52,7 @@ class TestAddCoinsToWallet(unittest.TestCase):
         # for coin in coins_list:
         #     self.customer.wallet.money.append(coin)
         self.customer.add_coins_to_wallet(coins_list)
-        self.assertEqual(len(self.customer.wallet.money), 91)    
+        self.assertEqual(len(self.customer.wallet.money), 92)    
     
     
     def test_add_coins_to_wallet_value_stays_same(self):

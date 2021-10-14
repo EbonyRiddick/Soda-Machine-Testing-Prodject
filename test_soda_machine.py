@@ -38,28 +38,32 @@ class TestGetCoinFromRegister(unittest.TestCase):
 
     def test_get_coin_from_register_quarter(self):
         """"Test method for checking if Quarter is returned from register"""
-        money= self.soda_machine.get_coin_from_register('Quarter')       
+        money= Quarter()
+        self.soda_machine.get_coin_from_register(money)       
         self.assertEqual(money.name , "Quarter")
       
     def test_get_coin_from_register_nickel(self):
         """"Test method for checking if Nickel is returned from register"""
-        money= self.soda_machine.get_coin_from_register('Nickel')       
+        money= Nickel()
+        self.soda_machine.get_coin_from_register(money)       
         self.assertEqual(money.name , "Nickel")
 
     def test_get_coin_from_register_dime(self):
         """"Test method for checking if Dime is returned from register"""
-        money= self.soda_machine.get_coin_from_register('Dime')       
+        money= Dime()
+        self.soda_machine.get_coin_from_register(money)       
         self.assertEqual(money.name , "Dime")
 
     def test_get_coin_from_register_penny(self):
         """"Test method for checking if Penny is returned from register"""
-        money= self.soda_machine.get_coin_from_register('Penny')       
+        money= Penny()
+        self.soda_machine.get_coin_from_register(money)       
         self.assertEqual(money.name , "Penny")
 
     def test_get_coin_from_register_invalid(self):
         """"Test method for checking if invald option is returned from register if bad option is inserted"""
         money= self.soda_machine.get_coin_from_register('Gold')       
-        self.assertEqual(money, None)
+        self.assertIsNone(money)
 
 
 class TestRegisterHasCoin(unittest.TestCase):
