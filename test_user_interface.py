@@ -4,7 +4,7 @@ from coins import Quarter, Dime, Nickel, Penny
 from cans import Cola, OrangeSoda, RootBeer
 
 class TestUserInterface(unittest.TestCase):
-    """Testing functions within the user interface"""
+    """Testing functions within the user interface 1-5"""
 
     def test_validate_main_menu(self):
         self.user_interface = user_interface
