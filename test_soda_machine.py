@@ -172,10 +172,6 @@ class TestGetInventorySoda(unittest.TestCase):
 class TestReturnInventory(unittest.TestCase):
     """Testing return inventory method to make sure after attempted purchase fails can is added back to inventory"""
 
-<<<<<<< HEAD
-class TestReturnInventory(unittest.TestCase):
-    """Testing return inventory method to make sure after attempted purchase fails can is added back to inventory"""
-=======
     def setUp(self):
         self.soda_machine = SodaMachine()
 
@@ -183,30 +179,6 @@ class TestReturnInventory(unittest.TestCase):
         can = RootBeer()
         self.soda_machine.return_inventory(can)
         self.assertEqual(len(self.soda_machine.inventory), 31)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> 96bc139ce510bd370c839f1ac340a0688a50cd68
-
-
-
 
 
 class TestDepositCoinsIntoRegister(unittest.TestCase):
