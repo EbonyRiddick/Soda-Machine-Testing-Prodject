@@ -170,27 +170,6 @@ class TestGetInventorySoda(unittest.TestCase):
 
         
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class TestReturnInventory(unittest.TestCase):
     """Testing return inventory method to make sure after attempted purchase fails can is added back to inventory"""
 
@@ -204,15 +183,20 @@ class TestReturnInventory(unittest.TestCase):
 
 
 
+class TestDepositCoinsIntoRegister(unittest.TestCase):
+    """Test method for Deposit coins into Register"""
+    def setUp(self):
+        self.soda_machine= SodaMachine()
 
 
+    def test_deposit_coins_into_register(self):
 
-
-
-
-
-
+        coin_list= [Quarter(), Dime(), Nickel(), Penny()] 
         
+        self.soda_machine.deposit_coins_into_register(coin_list)
+        self.assertEqual(len(self.soda_machine.register), 92)
+
+
 
 
 if __name__ == '__main__':
