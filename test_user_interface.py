@@ -1,5 +1,7 @@
 import unittest
 import user_interface
+from coins import Quarter, Dime, Nickel, Penny
+from cans import Cola, OrangeSoda, RootBeer
 
 class TestUserInterface(unittest.TestCase):
     """Testing functions within the user interface"""
@@ -34,13 +36,47 @@ class TestUserInterface(unittest.TestCase):
 class TestTryParseInt(unittest.TestCase):
     """Test method for try Parse Int"""
 
-    def test_try_parse_int(self):
+    def test_try_parse_int_number_as_string(self):
         self.user_interface = user_interface
         user_input= self.user_interface.try_parse_int('10')
         self.assertEqual(user_input, 10)
 
 
+    def test_try_parse_int_random_string(self):
+        self.user_interface = user_interface
+        user_input= self.user_interface.try_parse_int('hello')
+        self.assertEqual(user_input, 0)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class TestDisplayPaymentValue(unittest.TestCase):
+    """Test method for displaying payment value"""
+
+    def test_display_payment_value_all_coin_types(self):
+        self.user_interface = user_interface
+        coin_list=[Quarter(), Nickel(), Dime(), Penny()]
+        coin_total_value= self.user_interface.display_payment_value(coin_list)
+        self.assertEqual(coin_total_value, .41)
+
+
+    def test_display_payment_value_no_coins(self):
+        self.user_interface = user_interface
+        coin_list=[]
+        coin_total_value= self.user_interface.display_payment_value(coin_list)
+        self.assertEqual(coin_total_value, .00)
 
 
 
