@@ -1,5 +1,0 @@
-class TestUserInterface(unittest.TestCase):
-    """Testing functions within the user interface"""
-
-    def test_validate_main_menu(self):
-        
